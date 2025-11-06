@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高翊嘉的網站</title>
+    <style>
+        body {
+            margin: 0;
+            /* 隱藏滾動條，因為 p5 畫布是固定滿版背景 */
+            overflow: hidden; 
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            color: #333; /* 預設文字顏色，但會被 #content 覆蓋 */
+            text-align: center;
+        }
+        /* p5 畫布作為背景 */
+        #p5-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; 
+        }
+        /* 網站主要內容，置於中央 */
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* 內容層次在背景之上 */
+            color: #fff; /* 將文字顏色改為白色，以便在深色背景下看清楚 */
+            text-align: center;
+        }
+        h2, h3 {
+            margin: 0;
+        }
+        /* 包含文字資訊的區塊 */
+        .info-text {
+            font-size: 1.2em;
+            margin-top: 10px;
+            /* 黑色半透明背景 */
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 10px;
+            border-radius: 5px; /* 圓角效果 */
+            /* 讓背景剛好包住文字內容 */
+            display: inline-block; 
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.js"></script>
+    <script src="sketch.js"></script>
+</head>
+<body>
+    <div id="content">
+        <div class="info-text">
+            <h2>淡江大學教育科技學系</h2>
+            <h3>學號: 414730878</h3>
+            <h3>姓名: 高翊嘉</h3>
+        </div>
+    </div>
+</body>
+</html>
+
+
